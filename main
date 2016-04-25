@@ -1,14 +1,20 @@
+#keeps the time 
 import time
 
+#needed to manipulate clipboard
 import pyperclip
 
+#wait 10 minutes
 rest = 600
 
 while True:
+    #add clipboard to "clip" -> hope you don't copy any big text!
     clip = pyperclip.paste()
-    #set local variable to match clipboard
+
+    #wait 10 minutes (as above)
     time.sleep(rest)
-    #wait 10 minutes
+
+    
+    #if clipboard == clipboard captured 10 minutes ago, set it to "".
     if clip == pyperclip.paste():
-        #if clipboard == clipboard captured 10 minutes ago, set it to "".
         pyperclip.copy("")
